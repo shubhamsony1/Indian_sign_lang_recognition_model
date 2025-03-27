@@ -2,8 +2,8 @@ import os
 import shutil
 
 # Define paths
-source_base = r"C:\Users\ASUS\Desktop\indian_sign_lang_recognition_model\DATA_COL\imgs_without_landmarks"
-destination_base = r"C:\Users\ASUS\Desktop\indian_sign_lang_recognition_model\data"
+source_base = r"C:\Users\ASUS\Desktop\sem 8 new\Indian_sign_lang_recognition_model\DATA_COL\imgs_without_landmarks"
+destination_base = r"C:\Users\ASUS\Desktop\sem 8 new\Indian_sign_lang_recognition_model\data"
 
 # Get all subfolders in the source directory
 source_folders = [folder for folder in os.listdir(source_base) if os.path.isdir(os.path.join(source_base, folder))]

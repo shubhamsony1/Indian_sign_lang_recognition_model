@@ -33,8 +33,8 @@ mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 hands = mp_hands.Hands(static_image_mode=False, min_detection_confidence=0.3)
 
-BASE_DIR = r'C:\Users\ASUS\Desktop\indian_sign_lang_recognition_model\DATA_COL\imgs_without_landmarks'
-BASE_DIR_L = r'C:\Users\ASUS\Desktop\indian_sign_lang_recognition_model\DATA_COL'
+BASE_DIR = r'C:\Users\ASUS\Desktop\sem 8 new\Indian_sign_lang_recognition_model\DATA_COL\imgs_without_landmarks'
+BASE_DIR_L = r'C:\Users\ASUS\Desktop\sem 8 new\Indian_sign_lang_recognition_model\DATA_COL'
 DATA_DIR = os.path.join(BASE_DIR, reg_no)
 LANDMARKS_DIR = os.path.join(BASE_DIR_L, 'imgs_with_landmark', reg_no)
 

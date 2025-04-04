@@ -18,7 +18,7 @@ labels_dict = {0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8
                'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D', 'E': 'E', 'F': 'F', 'G': 'G', 'H': 'H',
                'I': 'I', 'J': 'J', 'K': 'K', 'L': 'L','M': 'M', 'N': 'N', 'O': 'O', 'P': 'P',
                'Q': 'Q', 'R': 'R', 'S': 'S', 'T': 'T', 'U': 'U', 'V': 'V', 'W': 'W', 'X': 'X',
-               'Y': 'Y', 'Z': 'Z', 'SPACE': 'SPACE', 'NEXT': 'NEXT', 'DONE': 'DONE'}  # Update with actual labels
+               'Y': 'Y', 'Z': 'Z', 'SPACE': ' ', 'NEXT': 'NEXT', 'DONE': 'DONE'}  # Update with actual labels
 
 while True:
     data_aux = []
@@ -65,8 +65,12 @@ while True:
         if isinstance(prediction[0], (int, np.integer)):
             predicted_character = labels_dict.get(int(prediction[0]), "Unknown")
         else:
-            # If the model returns a string label, use it directly
-            predicted_character = prediction[0] if prediction[0] in labels_dict.values() else "Unknown"
+            try:
+                # Try converting to int (for digit predictions like '3')
+                predicted_character = labels_dict.get(int(prediction[0]), "Unknown")
+            except:
+                # Otherwise assume it's already a string key like 'A' or 'SPACE'
+                predicted_character = labels_dict.get(prediction[0], "Unknown")
 
         print(f"Predicted Raw Output: {prediction[0]}")
 

@@ -10,9 +10,9 @@ hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3)
 
 # Dataset paths
 DATA_DIR = './data'
-PICKLE_DIR = r'C:\Users\ASUS\Desktop\sem 8 new\Indian_sign_lang_recognition_model'
-LANDMARK_IMG_DIR = r'C:\Users\ASUS\Desktop\sem 8 new\Indian_sign_lang_recognition_model\Dataset\Landmark_imgs'
-REJECTED_DIR = r'C:\Users\ASUS\Desktop\sem 8 new\Indian_sign_lang_recognition_model\Dataset\Rejected_images'
+PICKLE_DIR = r'C:\Users\ASUS\Documents\sem 8 new\Indian_sign_lang_recognition_model'
+LANDMARK_IMG_DIR = r'C:\Users\ASUS\Documents\sem 8 new\Indian_sign_lang_recognition_model\Dataset\Landmark_imgs'
+REJECTED_DIR = r'C:\Users\ASUS\Documents\sem 8 new\Indian_sign_lang_recognition_model\Dataset\Rejected_images'
 
 # Create necessary directories if they don't exist
 for directory in [PICKLE_DIR, LANDMARK_IMG_DIR, REJECTED_DIR]:

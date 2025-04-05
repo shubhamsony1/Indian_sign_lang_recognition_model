@@ -13,7 +13,7 @@ labels = np.asarray(data_dict['labels'])
 x_train, x_test, y_train, y_test = train_test_split(data, labels, test_size=0.3, shuffle=True, stratify=labels)
 
 # Train model
-model = RandomForestClassifier(min_samples_leaf=5)
+model = RandomForestClassifier(min_samples_leaf=20)
 model.fit(x_train, y_train)
 
 # Predict
@@ -33,5 +33,5 @@ print(f'F1 Score: {f1:.2f}')
 print('\nClassification Report:\n', classification_report(y_test, y_predict))
 
 # Save model
-with open('model1.p', 'wb') as f:
-    pickle.dump({'model1': model}, f)
+with open('model.p', 'wb') as f:
+    pickle.dump({'model': model}, f)

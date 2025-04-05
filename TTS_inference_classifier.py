@@ -27,7 +27,7 @@ labels_dict = {
     'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D', 'E': 'E', 'F': 'F', 'G': 'G', 'H': 'H',
     'I': 'I', 'J': 'J', 'K': 'K', 'L': 'L', 'M': 'M', 'N': 'N', 'O': 'O', 'P': 'P',
     'Q': 'Q', 'R': 'R', 'S': 'S', 'T': 'T', 'U': 'U', 'V': 'V', 'W': 'W', 'X': 'X',
-    'Y': 'Y', 'Z': 'Z', 'SPACE': ' ', 'NEXT': 'NEXT', 'DONE': 'DONE'
+    'Y': 'Y', 'Z': 'Z', 'SPACE': ' ', 'NEXT': 'DELETE', 'DONE': 'DONE'
 }
 
 # ------------------------- Global Variables for Timing, Sentence Accumulation, and Recording Control -------------------------
@@ -177,6 +177,8 @@ def update():
 
             if current_gesture == "DONE":
                 threshold = DONE_GESTURE_THRESHOLD
+            elif current_gesture == "DELETE":
+                threshold = 5  # Hold DELETE gesture for 5 seconds to trigger
             else:
                 threshold = FIRST_GESTURE_THRESHOLD if sentence == "" else SUBSEQUENT_GESTURE_THRESHOLD
 
@@ -186,8 +188,12 @@ def update():
                         sentence_label.config(text=f"Sentence: {sentence}")
                         tts_thread(sentence)
                         sentence = ""
+                elif current_gesture == "DELETE":
+                    # Delete the last word
+                    sentence = sentence[:-1]
+                    sentence_label.config(text=f"Sentence: {sentence}")
                 else:
-                    if current_gesture == "SPACE":
+                    if current_gesture == " ":
                         sentence += " "
                     else:
                         sentence += current_gesture

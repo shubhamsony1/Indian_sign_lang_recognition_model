@@ -10,7 +10,7 @@ mpDraw = mp.solutions.drawing_utils
 hands = mpHands.Hands(min_detection_confidence=0.8)
 
 # Open Camera
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 ws, hs = 1280, 720
 cap.set(3, ws)
 cap.set(4, hs)

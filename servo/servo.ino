@@ -1,9 +1,9 @@
 #include <ESP32Servo.h>
 
 Servo servoX, servoY;
-int servoPinX = 14;  // X-axis Servo (ESP32-CAM GPIO 14)
-int servoPinY = 15;  // Y-axis Servo (ESP32-CAM GPIO 15)
-int posX = 90, posY = 80;
+int servoPinX = 14;  // X-axis Servo (ESP32-CAM GPIO 14), yellow wire
+int servoPinY = 15;  // Y-axis Servo (ESP32-CAM GPIO 15), orange wire
+int posX = 90, posY = 60;
 
 void setup() {
     Serial.begin(115200);

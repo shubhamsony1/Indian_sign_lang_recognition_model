@@ -13,7 +13,7 @@ labels = np.asarray(data_dict['labels'])
 x_train, x_test, y_train, y_test = train_test_split(data, labels, test_size=0.3, shuffle=True, stratify=labels)
 
 # Train model
-model = RandomForestClassifier(min_samples_leaf=20)
+model = RandomForestClassifier(min_samples_leaf=30)
 model.fit(x_train, y_train)
 
 # Predict

@@ -39,7 +39,7 @@ for dir_ in os.listdir(DATA_DIR):
 
         img = cv2.imread(os.path.join(DATA_DIR, dir_, img_path))
         if img is None:
-            #print(f"Rejected (cannot read): {dir_}/{img_path}")
+            print(f"Rejected (cannot read): {dir_}/{img_path}")
             rejected_count += 1
             cv2.imwrite(os.path.join(REJECTED_DIR, img_path), img)
             continue
@@ -53,7 +53,7 @@ for dir_ in os.listdir(DATA_DIR):
 
         # Reject images with incorrect hand count
         if (gesture_type == "two_hand" and num_hands != 2) or num_hands == 0:
-            #print(f"Rejected (wrong hand count): {dir_}/{img_path}")
+            print(f"Rejected (wrong hand count): {dir_}/{img_path}")
             rejected_count += 1
             cv2.imwrite(os.path.join(REJECTED_DIR, img_path), img)
             continue
@@ -80,7 +80,7 @@ for dir_ in os.listdir(DATA_DIR):
         data.append(data_aux)
         labels.append(dir_)
         accepted_count += 1
-        #print(f"Accepted: {dir_}/{img_path}")
+        print(f"Accepted: {dir_}/{img_path}")
 
         # Draw landmarks on the image
         for hand_landmarks in results.multi_hand_landmarks:

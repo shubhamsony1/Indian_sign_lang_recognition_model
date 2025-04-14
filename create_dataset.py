@@ -19,8 +19,10 @@ for directory in [PICKLE_DIR, LANDMARK_IMG_DIR, REJECTED_DIR]:
     os.makedirs(directory, exist_ok=True)
 
 # Define which gestures require two hands
-two_hand_gestures = {'A', 'B', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'}  # Add two-hand gestures here
-one_hand_gestures = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'C', 'I', 'L', 'O', 'U', 'V', 'SPACE', 'NEXT', 'DONE'}  # Add single-hand gestures here
+two_hand_gestures = {'A', 'B', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'M',
+                     'N', 'P', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'}  # Add two-hand gestures here
+one_hand_gestures = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                     'C', 'I', 'L', 'O', 'U', 'V', 'SPACE', 'NEXT', 'DONE'}  # Add single-hand gestures here
 
 # Initialize dataset lists
 data = []

@@ -1,0 +1,7 @@
+opencv-python
+mediapipe==0.10.20
+numpy
+Pillow
+gtts
+playsound
+pyserial

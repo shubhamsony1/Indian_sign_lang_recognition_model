@@ -9,8 +9,7 @@ void setup() {
     Serial.begin(115200);
     servoX.attach(servoPinX);
     servoY.attach(servoPinY);
-    servoX.write(posX);
-    servoY.write(posY);
+    servoX.write(posX);    servoY.write(posY);
 }
 
 void loop() {

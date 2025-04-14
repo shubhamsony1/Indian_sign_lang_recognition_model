@@ -121,9 +121,12 @@ while cap.isOpened():
 
         # Show Values on Screen
         cv2.rectangle(img, (40, 20), (400, 150), (0, 255, 255), cv2.FILLED)
-        cv2.putText(img, f'Servo X: {current_servoX} deg', (50, 50), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 0), 2)
-        cv2.putText(img, f'Servo Y: {current_servoY} deg', (50, 100), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 0), 2)
-        cv2.putText(img, f'Tracking: {hand_label}', (50, 130), cv2.FONT_HERSHEY_PLAIN, 2, (0, 0, 255), 2)
+        cv2.putText(img, f'Servo X: {current_servoX} deg', (50, 50), cv2.FONT_HERSHEY_PLAIN,
+                    2, (255, 0, 0), 2)
+        cv2.putText(img, f'Servo Y: {current_servoY} deg', (50, 100), cv2.FONT_HERSHEY_PLAIN,
+                    2, (255, 0, 0), 2)
+        cv2.putText(img, f'Tracking: {hand_label}', (50, 130), cv2.FONT_HERSHEY_PLAIN,
+                    2, (0, 0, 255), 2)
 
     else:
         # No hand detected: reset counter
